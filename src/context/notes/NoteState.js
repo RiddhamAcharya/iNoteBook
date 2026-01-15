@@ -48,6 +48,24 @@ const NoteState = (props) => {
       date: "2026-01-15T09:29:33.391Z",
       __v: 0,
     },
+    {
+      _id: "6968b37ca027e1a7289f6d09",
+      user: "6960eba27591b8ebfa83bbf8",
+      title: "A new note cause previous was small",
+      description: "Wow What a note!",
+      tag: "new",
+      date: "2026-01-15T09:29:32.575Z",
+      __v: 0,
+    },
+    {
+      _id: "6968b37da027e1a7289f6d15",
+      user: "6960eba27591b8ebfa83bbf8",
+      title: "A new note cause previous was small",
+      description: "Wow What a note!",
+      tag: "new",
+      date: "2026-01-15T09:29:33.391Z",
+      __v: 0,
+    },
   ];
   const [notes, setNotes] = useState(notesInitial);
   return (
