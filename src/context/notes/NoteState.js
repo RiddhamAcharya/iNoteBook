@@ -17,7 +17,6 @@ const NoteState = (props) => {
 
     });
     const json = await response.json();
-    console.log(json);
     setNotes(json);
   };
 
@@ -31,18 +30,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-    const json = await response.json();
-    console.log(json);
-
-    const note = {
-      _id: "6968b37da027e1a7289f6d15",
-      user: "6960eba27591b8ebfa83bbf8a",
-      title: title,
-      description: description,
-      tag: tag,
-      date: "2026-01-15T09:29:33.391Z",
-      __v: 0,
-    };
+    const note = await response.json();
     setNotes(notes.concat(note));
   };
 
@@ -55,8 +43,7 @@ const NoteState = (props) => {
         "auth-token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjk2MGViYTI3NTkxYjhlYmZhODNiYmY4In0sImlhdCI6MTc2ODEyNDA3OX0.jye7hh5FGMHAzI2ymktkn9U2EQQl1nYStdcXZbSD7dU"
       },
     });
-    const json = await response.json();
-    console.log(json);
+    const json = await response.json()
 
     const newNotes = notes.filter((note) => {return note._id !== id});
     setNotes(newNotes); 
@@ -73,7 +60,6 @@ const NoteState = (props) => {
       body: JSON.stringify({ title, description, tag }),
     });
     const json = await response.json();
-    console.log(json);
 
 
     let newNotes = JSON.parse(JSON.stringify(notes));
@@ -86,8 +72,8 @@ const NoteState = (props) => {
         newNotes[index].tag = tag;
         break;
       }
-      setNotes(newNotes);
     }
+    setNotes(newNotes);
   };
   return (
     <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, getNotes }}>
